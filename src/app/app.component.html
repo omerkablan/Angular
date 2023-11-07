@@ -1,0 +1,39 @@
+<div class="form-container">
+  <form [formGroup]="frm" (ngSubmit)="onSubmit()">
+<h1>Lütfen bilgilerinizi giriniz</h1>
+    <input type="text" placeholder="fullname" formControlName="fullname"><br>
+    <input type="text" placeholder="username" formControlName="username"> <br>
+    <input type="email" placeholder="email" formControlName="email"><br>
+    <input type="password" placeholder="password" formControlName="password"><br>
+    <input type="password" placeholder="confirm_password"
+      formControlName="confirm_password"><br>
+    <label>
+      <input type="checkbox" formControlName="termsAccepted"> şartları okudum ve
+      kabul
+      ediyorum 
+    </label><br>
+    <div *ngIf="frm.get('fullname').hasError('required')" class="text-danger">
+      Fullname is required.
+    </div>
+    <div *ngIf="frm.get('username').hasError('required')" class="text-danger">
+      Username is required.
+    </div>
+    <div *ngIf="frm.get('email').hasError('required')" class="text-danger">
+      Email is required.
+    </div>
+    <div *ngIf="frm.get('password').hasError('required')" class="text-danger">
+      Password is required.
+    </div>
+    <div *ngIf="frm.get('confirm_password').hasError('required')" class="text-danger">
+      Confirm_password is required.
+    </div>
+    <div *ngIf="frm.hasError('passwordMismatch')" class="text-danger">
+      Passwords do not match.
+    </div>
+    <div *ngIf="frm.get('termsAccepted').hasError('required')" class="text-danger">
+      You must accept the terms.
+    </div>
+    <button>ok</button>
+
+  </form>
+</div>

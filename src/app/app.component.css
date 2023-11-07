@@ -1,0 +1,7 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh; /* Sayfanın tamamını kaplaması için */
+    background-color: #b17ac2;
+  }
